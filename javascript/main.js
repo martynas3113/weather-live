@@ -12,24 +12,21 @@ window.addEventListener('load', () => {
             lat = position.coords.latitude;
 
 
-            const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=e8fc1f96fd784a1d4401b66853e10254`
+            const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&lang=lt&units=metric&appid=e8fc1f96fd784a1d4401b66853e10254`
             fetch(api)
                 .then(response => {
                     return response.json()
                 })
                 .then(data => {
-                    console.log(data);
                     const temperature = data.main.temp;
                     const timezone = data.name;
-                    const description = data.weather[0].description;
+                    const description = data.weather[0].description
+                    console.log(data);
                     temperatureDegreeDOM.textContent = temperature;
                     timezoneDOM.textContent = timezone;
                     temperatureDescriptionDOM.textContent = description
 
                 });
         });
-
     }
-
-   
 });
