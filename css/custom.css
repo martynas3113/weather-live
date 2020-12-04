@@ -33,6 +33,10 @@ body {
     align-items: center;
     flex-direction: column;
 }
+
+    .temperature-description {
+        text-transform: uppercase;
+    }
 .degree-container {
 
     display: flex;
